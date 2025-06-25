@@ -1,0 +1,61 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+ul {
+    display: flex;
+    gap: 36px;
+}
+
+li {
+    font-weight: 400;
+    list-style: none;
+    font-size: 16px;
+}
+
+
+.infoZone {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.inputSearch {
+    padding: 8px;
+    background: var(--medium-blue);
+    border-radius: 12px;
+    border: none;
+}
+
+.inputSearch::placeholder {
+    color: var(--light-blue);
+}
+
+.inputSearch::before {
+    /* content: url("../../../public/searchIcon.svg"); */
+    content: url("../../../public/searchIcon.svg");
+
+    width: 10px;
+    height: 10px;
+}
+
+.notifactionIcon {
+    background: var(--medium-blue);
+    padding: 10px;
+    border-radius: 12px;
+    
+}
+
+.infoZone>.profileIcon {
+
+    width: 50px;
+}
