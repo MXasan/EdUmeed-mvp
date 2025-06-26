@@ -1,0 +1,17 @@
+.videoItem-image{
+    width: 413px;
+    height: 270px;
+    border-radius: 12px;
+}
+.videoBlock{
+    margin-top: 30px;
+}
+.videoBlockchild{
+    display: flex;
+    gap: 20px   ;
+    flex-wrap: wrap;
+}
+h2{
+    font-weight: 600;
+    margin-bottom: 20px;
+}

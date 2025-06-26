@@ -16,8 +16,8 @@ const Navbar = () => {
                 </div>
                 <div className="infoZone">
                     <input className='inputSearch' type="text" placeholder='Search'/>
-                    <img className='notifactionIcon' src="../../../public/notifaction.svg" alt="" />
-                    <img className='profileIcon' src="../../../public/profileIcon.svg" alt="" />
+                    <img className='notifactionIcon' src="../../../public/image/notifaction.svg" alt="" />
+                    <img className='profileIcon' src="../../../public/image/profileIcon.svg" alt="" />
                     
                 </div>
             </nav>
