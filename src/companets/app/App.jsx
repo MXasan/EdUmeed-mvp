@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../header/header'
 import Navbar from '../navbar/navbar'
-import VideosBlock from '../videosBlock/videosBlock'
+import HomePage from '../homePage/homePage';
+import { Routes, Route } from "react-router-dom";
+
 import './App.css'
 
 function App() {
@@ -17,11 +18,11 @@ function App() {
   return (
 
     <>
-
       <div className="content">
         <Navbar />
-        <Header />
-        <VideosBlock videos={videos} />
+        <Routes>
+          <Route path="/" element={<HomePage videos={videos} />} />
+        </Routes>
       </div>
     </>
   )

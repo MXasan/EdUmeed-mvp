@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from "react-router-dom";
+
 import './navbar.css'
 const Navbar = () => {
     return (
@@ -8,17 +10,18 @@ const Navbar = () => {
                     {/* <img src="" alt="" className="logo" /> */}
                     <h2>EdUmeed</h2>
                     <ul>
-                        <li>Home</li>
-                        <li>Courses</li>
-                        <li>Mission</li>
-                        <li>Comunnity</li>
+
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/videoBlock">Courses</Link></li>
+                        <li><Link to="/courses">News</Link></li>
+                        <li><Link to="/courses">Books</Link></li>
                     </ul>
                 </div>
                 <div className="infoZone">
-                    <input className='inputSearch' type="text" placeholder='Search'/>
+                    <input className='inputSearch' type="text" placeholder='Search' />
                     <img className='notifactionIcon' src="../../../public/image/notifaction.svg" alt="" />
                     <img className='profileIcon' src="../../../public/image/profileIcon.svg" alt="" />
-                    
+
                 </div>
             </nav>
         </div>

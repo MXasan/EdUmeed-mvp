@@ -4,7 +4,7 @@ import './videos.block.css'
 const VideosBlock = ({ videos }) => {
     return (
         <div className='videoBlock'>
-            <h2>Explore Courses</h2>
+            <h2 className='title'>Explore Courses</h2>
             <div className='videoBlockchild'>
                 {videos.map((video) => (
                     <VideoItem video={video} />
