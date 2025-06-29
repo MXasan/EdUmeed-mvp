@@ -1,0 +1,8 @@
+.videoPage{
+    display: flex;
+}
+.videoListInPage{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

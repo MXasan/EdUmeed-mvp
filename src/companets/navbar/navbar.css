@@ -19,9 +19,23 @@ ul {
 li {
     font-weight: 400;
     list-style: none;
-    font-size: 16px;
 }
 
+a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    font-size: 1rem;
+    font-size: 16px;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #e0e0e0;
+    color: #000;
+}
 
 .infoZone {
     display: flex;
@@ -52,7 +66,7 @@ li {
     background: var(--medium-blue);
     padding: 10px;
     border-radius: 12px;
-    
+
 }
 
 .infoZone>.profileIcon {

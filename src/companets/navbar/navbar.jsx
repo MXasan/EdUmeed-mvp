@@ -12,9 +12,9 @@ const Navbar = () => {
                     <ul>
 
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="/videoBlock">Courses</Link></li>
-                        <li><Link to="/courses">News</Link></li>
-                        <li><Link to="/courses">Books</Link></li>
+                        <li><Link to="/courses">Courses</Link></li>
+                        <li><Link to="/smt">News</Link></li>
+                        <li><Link to="/smt">Books</Link></li>
                     </ul>
                 </div>
                 <div className="infoZone">

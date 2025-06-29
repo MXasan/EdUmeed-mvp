@@ -1,0 +1,37 @@
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import ReactPlayer from 'react-player';
+import { useLocation, useNavigate } from 'react-router-dom';
+import Video from './video/video'
+import VideoList from './videoList/videoList';
+import './VideoPage.css'
+
+const VideoPage = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
+    const clickedItem = location.state?.clickedItem;
+    const all = location.state?.all || [];
+
+    useEffect(() => {
+        if (!clickedItem) {
+            navigate('/');
+        }
+    }, [clickedItem, navigate]);
+
+    if (!clickedItem) return null;
+
+    const otherVideos = all.filter(video => video.id !== clickedItem.id);
+    return (
+        <div className='videoPage'>
+            <Video clickedItem={clickedItem} />
+            <div className='videoListInPage'>
+                {otherVideos.map((list) => (
+                    <VideoList list={list} />
+                ))}
+            </div>
+
+        </div>
+    );
+};
+
+export default VideoPage;

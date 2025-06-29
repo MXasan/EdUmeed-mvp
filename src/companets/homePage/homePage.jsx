@@ -2,11 +2,11 @@ import React from 'react'
 import Header from './header/header'
 import VideosBlock from './videosBlock/videosBlock'
 
-const HomePage = ({ videos }) => {
+const HomePage = ({ item }) => {
     return (
         <>
             <Header />
-            <VideosBlock videos={videos} />
+            <VideosBlock item={item} />
         </>
     )
 }
