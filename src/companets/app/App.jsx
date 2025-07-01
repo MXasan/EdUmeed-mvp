@@ -19,10 +19,13 @@ function App() {
     <>
       <div className="content">
         <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage item={item} />} />
-          <Route path="/courses" element={<VideoPage />} />
-        </Routes>
+        <div className="contener">
+          <Routes>
+            <Route path="/" element={<HomePage item={item} />} />
+            <Route path="/courses" element={<VideoPage />} />
+          </Routes>
+        </div>
+
       </div>
     </>
   )

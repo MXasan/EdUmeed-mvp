@@ -26,7 +26,7 @@ const VideoPage = () => {
             <Video clickedItem={clickedItem} />
             <div className='videoListInPage'>
                 {otherVideos.map((list) => (
-                    <VideoList list={list} />
+                    <VideoList list={list} all={all} />
                 ))}
             </div>
 

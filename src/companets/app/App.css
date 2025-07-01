@@ -1,7 +1,9 @@
 #root {
-  max-width: 1280px;
+  max-width: 80vw;
   margin: 0 auto;
+  border: 1px solid red;
 }
+
 /* .aura-bg {
   position: fixed;
   top: 0;
