@@ -4,6 +4,12 @@
   border: 1px solid red;
 }
 
+@media screen and (max-width: 998px) {
+  #root {
+    max-width: 90vw;
+  }
+}
+
 /* .aura-bg {
   position: fixed;
   top: 0;

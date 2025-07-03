@@ -73,3 +73,13 @@ nav ul li a:hover {
 
     width: 50px;
 }
+
+@media screen and (max-width: 1255px) {
+
+    ul,
+    .inputSearch,
+    .notifactionIcon {
+        display: none;
+    }
+
+}
