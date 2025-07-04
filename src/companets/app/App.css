@@ -10,6 +10,20 @@
   }
 }
 
+.HomePage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.parentCardSwap {
+  border: 1px solid rgb(255, 255, 255);
+  height: 500px;
+  width: 1200px;
+  overflow: hidden;
+}
+
 /* .aura-bg {
   position: fixed;
   top: 0;
