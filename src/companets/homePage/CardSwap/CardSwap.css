@@ -1,7 +1,7 @@
 .card-swap-container {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    bottom: 0;
+    right: 0;
     transform: translate(5%, 20%);
     transform-origin: bottom right;
 
@@ -11,11 +11,12 @@
 
 .card {
     position: absolute;
+    padding: 10px 10px 0 10px ;
     top: 50%;
     left: 50%;
     border-radius: 12px;
-    border: 1px solid #fff;
-    background: rgb(29, 41, 96);
+    border: 1px solid var(--light-blue);
+    background: var(--medium-blue);
 
     transform-style: preserve-3d;
     will-change: transform;

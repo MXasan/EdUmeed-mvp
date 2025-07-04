@@ -1,7 +1,6 @@
 #root {
   max-width: 80vw;
   margin: 0 auto;
-  border: 1px solid red;
 }
 
 @media screen and (max-width: 998px) {
@@ -18,10 +17,44 @@
 }
 
 .parentCardSwap {
-  border: 1px solid rgb(255, 255, 255);
+  border: 1px solid var(--light-blue);
+  border-radius: 32px;
   height: 500px;
-  width: 1200px;
+  width: 78.25vw;
+  margin-top: 50px;
   overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+
+.infoCardSwap {
+  margin-top: 100px;
+  margin-left: 50px;
+}
+
+.infoCardSwap>h1 {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.infoCardSwap>p {
+  color: var(--light-blue);
+}
+
+
+.line {
+  height: 2px;
+  /* толщина линии */
+  background-color: var(--light-blue);
+  /* цвет линии */
+  width: 100%;
+  /* ширина */
+  margin: 10px 0;
+}
+
+.imgCard {
+  border-radius: 12px;
+  width: 600px;
 }
 
 /* .aura-bg {

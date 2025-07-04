@@ -8,8 +8,15 @@ const HomePage = ({ item }) => {
         <div className='HomePage'>
             {/* <Header /> */}
             <div className='parentCardSwap'>
+                <div className="infoCardSwap">
+                    <h1>EdUmeed - Education <br /> is hope</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br />
+                        Consequatur dolorem fuga repudiandae. Distinctio recusandae
+                        </p>
+                </div>
 
-                <div style={{ height: '600px', position: 'relative' }}>
+
+                <div style={{ height: '500px', position: 'relative' }}>
                     <CardSwap
                         cardDistance={60}
                         verticalDistance={70}
@@ -18,15 +25,21 @@ const HomePage = ({ item }) => {
                     >
                         <Card>
                             <h3>Card 1</h3>
-                            <p>Your content here</p>
+                            <div class="line"></div>
+                            <img className='imgCard' src="../../../public/image/cardS1.jpg" alt="" />
+                            <p>vev</p>
                         </Card>
                         <Card>
                             <h3>Card 2</h3>
-                            <p>Your content here</p>
+                            <div class="line"></div>
+                            <img className='imgCard' src="../../../public/image/cardS2.jpg" alt="" />
+
                         </Card>
                         <Card>
                             <h3>Card 3</h3>
-                            <p>Your content here</p>
+                            <div class="line"></div>
+                            <img className='imgCard' src="../../../../public/image/cardS3.jpg" alt="" />
+
                         </Card>
                     </CardSwap>
 
