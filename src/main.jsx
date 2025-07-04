@@ -6,7 +6,7 @@ import App from './companets/app/App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/EdUmeed-mvp">
       <App />
     </BrowserRouter>
   </StrictMode>,

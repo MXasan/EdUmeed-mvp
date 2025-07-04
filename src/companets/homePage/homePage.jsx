@@ -26,19 +26,22 @@ const HomePage = ({ item }) => {
                         <Card>
                             <h3>Card 1</h3>
                             <div class="line"></div>
-                            <img className='imgCard' src="../../../public/image/cardS1.jpg" alt="" />
+                            <img className='imgCard' src={`${import.meta.env.BASE_URL}image/cardS1.jpg`} alt="Card 1" />
+
                             <p>vev</p>
                         </Card>
                         <Card>
                             <h3>Card 2</h3>
                             <div class="line"></div>
-                            <img className='imgCard' src="../../../public/image/cardS2.jpg" alt="" />
+                            <img className='imgCard' src={`${import.meta.env.BASE_URL}image/cardS2.jpg`} alt="Card 1" />
+
 
                         </Card>
                         <Card>
                             <h3>Card 3</h3>
                             <div class="line"></div>
-                            <img className='imgCard' src="../../../../public/image/cardS3.jpg" alt="" />
+                            <img className='imgCard' src={`${import.meta.env.BASE_URL}image/cardS3.jpg`} alt="Card 1" />
+
 
                         </Card>
                     </CardSwap>

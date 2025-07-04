@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import ReactPlayer from 'react-player';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Video from './video/video'
 import VideoList from './videoList/videoList';

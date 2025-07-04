@@ -9,9 +9,9 @@ import './App.css'
 function App() {
   const [item, setVideos] = useState([]);
   useEffect(() => {
-    fetch('../../../public/json/video.json')
-      .then(response => response.json())
-      .then(data => setVideos(data));
+    fetch(`${import.meta.env.BASE_URL}json/video.json`)
+    .then(response => response.json())
+    .then(data => setVideos(data));
   }, []);
 
   return (
