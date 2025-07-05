@@ -42,7 +42,7 @@ const placeNow = (el, slot, skew) =>
         skewY: skew,
         transformOrigin: "center center",
         zIndex: slot.zIndex,
-        force3D: true,
+        force3D: false,
     });
 
 const CardSwap = ({
