@@ -19,8 +19,6 @@ const VideosBlock = ({ item }) => {
                         <VideoItem
                             image={clickedItem.image}
                             name={clickedItem.name}
-                            id={clickedItem.id}
-
                         />
                     </div>
                 ))}

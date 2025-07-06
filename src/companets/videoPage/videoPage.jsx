@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Video from './video/video'
 import VideoList from './videoList/videoList';
-import ScrollToTop from '../app/scrollToTop';
 import './VideoPage.css'
 
 const VideoPage = () => {
@@ -22,7 +21,6 @@ const VideoPage = () => {
     const otherVideos = all.filter(video => video.id !== clickedItem.id);
     return (
         <div className='videoPage'>
-            <ScrollToTop />
             <Video clickedItem={clickedItem} />
             <div className='videoListInPage'>
                 {otherVideos.map((list) => (

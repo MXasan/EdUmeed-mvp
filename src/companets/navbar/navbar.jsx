@@ -50,18 +50,18 @@ const Navbar = () => {
                             <div className="line"></div>
 
                             <li><Link to="/" onClick={() => setMenu(false)}><div><img src={`${import.meta.env.BASE_URL}image/home.svg`} alt="home page" /><p>Home</p></div></Link></li>
-                            <li><Link to="/courses" onClick={() => setMenu(false)}><div><img src={`${import.meta.env.BASE_URL}image/youtube.svg`} alt="video page" /><p>Video</p></div></Link></li>
-                            {/* <li><Link to="/smt" onClick={() => setMenu(false)}><img src="" alt="" /></Link></li> */}
-                            {/* <li><Link to="/smt" onClick={() => setMenu(false)}><img src="" alt="" /></Link></li> */}
+                            <li><Link to="/courses" onClick={() => setMenu(false)}><div><img src={`${import.meta.env.BASE_URL}image/notes.svg`} alt="notes page" /><p>Video</p></div></Link></li>
+                            <li><Link to="/smt" onClick={() => setMenu(false)}><div><img src={`${import.meta.env.BASE_URL}image/news.svg`} alt="" /><p>News</p></div></Link></li>
+                            <li><Link to="/smt" onClick={() => setMenu(false)}><div><img src={`${import.meta.env.BASE_URL}image/book.svg`} alt="" /><p>Books</p></div></Link></li>
                         </ol>
                     </div>
 
                     <h2>EdUmeed</h2>
                     <ul>
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="/courses">Courses</Link></li>
-                        <li><Link to="/smt">News</Link></li>
-                        <li><Link to="/smt">Books</Link></li>
+                        <li><Link to="/notes">Notes</Link></li>
+                        <li><Link to="/news">News</Link></li>
+                        <li><Link to="/books">Books</Link></li>
                     </ul>
                 </div>
 

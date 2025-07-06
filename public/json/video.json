@@ -2,49 +2,49 @@
     {
         "id": 1,
         "name": "Creative Web Design",
-        "image": "https://img.freepik.com/free-photo/web-design-technology-browsing-programming-concept_53876-163260.jpg?semt=ais_hybrid&w=740",
-        "video": "https://www.youtube.com/watch?v=FoSgDtqb0Zc"
+        "image": "https://t4.ftcdn.net/jpg/07/48/95/53/360_F_748955329_eqgTmFKEsqOqgX89tVG2MHtPgctHoCO9.jpg",
+        "video": "https://www.youtube.com/watch?v=Ccb-YGLfYt8"
     },
     {
         "id": 2,
         "name": "JavaScript Fundamentals",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
-        "video": "https://www.youtube.com/watch?v=FoSgDtqb0Zc"
+        "image": "https://i.pinimg.com/736x/c3/e7/28/c3e728f93ea101c8cd7db4756f062efe.jpg",
+        "video": "https://www.youtube.com/watch?v=TI-OVY11HD4"
     },
     {
         "id": 3,
         "name": "UI/UX Design Principles",
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7eQ-vNTEZmBsSYUR5fGDNe58uRfhHEVN3dA&s",
-        "video": "https://www.youtube.com/watch?v=FoSgDtqb0Zc"
+        "image": "https://static.vecteezy.com/system/resources/thumbnails/040/966/108/small_2x/ai-generated-high-contrast-plain-navy-blue-background-photo.jpg",
+        "video": "https://www.youtube.com/watch?v=hR1yKeSpnlY"
     },
     {
         "id": 4,
         "name": "Intro to Data Analytics",
-        "image": "https://miro.medium.com/v2/resize:fit:1400/1*GfSd7NQfvfCE2KY4U5Uw2Q.png",
-        "video": "https://www.youtube.com/watch?v=FoSgDtqb0Zc"
+        "image": "https://img.freepik.com/free-vector/gradient-dark-dynamic-lines-background_23-2148995950.jpg?semt=ais_hybrid&w=740",
+        "video": "https://www.youtube.com/watch?v=E_sPvPHwpuk"
     },
     {
         "id": 5,
         "name": "React for Beginners",
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRDhBe0yNe_86u46avd3yFQbQdOyK9z4NmUw&s",
-        "video": "https://www.youtube.com/watch?v=FoSgDtqb0Zc"
+        "image": "https://t4.ftcdn.net/jpg/04/38/55/69/360_F_438556946_UKupZvZrCzbfIxawj8P57hoDSl7ypza9.jpg",
+        "video": "https://www.youtube.com/watch?v=l68HFQV5RJU"
     },
     {
         "id": 6,
         "name": "Node.js Basics",
-        "image": "https://impalaintech.com/wp-content/uploads/2024/04/The-Ultimate-UI-UX-Design-Guide-Principles-Processes-and-Best-Practices.webp",
-        "video": "https://www.youtube.com/watch?v=FoSgDtqb0Zc"
+        "image": "https://img.freepik.com/free-vector/blank-blue-halftone-background_53876-114466.jpg?semt=ais_hybrid&w=740",
+        "video": "https://www.youtube.com/watch?v=xf2i6Acs1mI"
     },
     {
         "id": 7,
         "name": "Python Programming",
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrA5XGRu3RqibcI8FSJ1dPaPF6ZlM_Q1tc7A&s",
-        "video": "https://www.youtube.com/watch?v=FoSgDtqb0Zc"
+        "image": "https://wallpapers.com/images/hd/dark-blue-ombre-2brea8n3evw30wue.jpg",
+        "video": "https://www.youtube.com/watch?v=d3cMODi1CtU"
     },
     {
         "id": 8,
         "name": "Machine Learning Essentials",
-        "image": "https://www.designmantic.com/blog/wp-content/uploads/2017/07/Elements-of-Visual-Hierarchy.png",
+        "image": "https://media.istockphoto.com/id/1413790486/photo/abstract-dark-blue-background-silk-satin-navy-blue-color-elegant-background.jpg?s=612x612&w=0&k=20&c=DoU92DzLD5m4wynhz06GxRFM0syakHGsBgaLsI1ek-c=",
         "video": "https://www.youtube.com/watch?v=FoSgDtqb0Zc"
     }
 ]

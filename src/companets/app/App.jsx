@@ -21,6 +21,7 @@ function App() {
       <div className="content">
         <ScrollToTop/>
         <Navbar />
+        <div className="line"></div>
         <Routes>
           <Route path="/" element={<HomePage item={item} />} />
           <Route path="/courses" element={<VideoPage />} />
