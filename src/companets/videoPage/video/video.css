@@ -1,5 +1,76 @@
-.videoPlayer{
-    height: 488px;
-    width: 60vw;
-    margin-right: 30px;
+.videoPlayer>p {
+    margin-top: 30px;
+}
+
+.videoPlayerItem {
+    width: 60.729vw;
+    border-radius: 20px;
+    height: 745px;
+    position: relative;
+    overflow: hidden;
+}
+
+.videoPlayerItemV {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@media screen and (max-width:1750px) {
+    .videoPlayerItem {
+        width: 53.956vw;
+        height: 505px;
+    }
+
+    .videoPlayer {
+        width: 53.956vw;
+    }
+}
+@media screen and (max-width:1273px) {
+    .videoPlayerItem {
+        width: 79.9vw;
+        height: 505px;
+    }
+
+    .videoPlayer {
+        width: 79.9vw;
+    }
+}
+@media screen and (max-width:998px) {
+    .videoPlayerItem {
+        width: 89vw;
+        height: 505px;
+    }
+
+    .videoPlayer {
+        width: 89vw;
+    }
+}
+@media screen and (max-width:779px) {
+    .videoPlayerItem {
+        height: 405px;
+    }
+
+    .videoPlayer {
+        margin-bottom: 50px;
+    }
+}
+@media screen and (max-width:600px) {
+    .videoPlayerItem {
+        height: 305px;
+    }
+
+    .videoPlayer {
+        margin-bottom: 30px;
+    }
+}
+@media screen and (max-width:400px) {
+    .videoPlayerItem {
+        height: 245px;
+    }
+
+    .videoPlayer {
+        width: 89vw;
+        margin-bottom: 30px;
+    }
 }

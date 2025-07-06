@@ -1,8 +1,38 @@
-.videoPage{
+.videoPage {
     display: flex;
-}
-.videoListInPage{
-    display: flex;
-    flex-direction: column;
+    margin-top: 30px;
     gap: 20px;
+    justify-content: space-between;
+}
+
+@media screen and (min-width: 1274px) {
+    .videoListInPage {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+
+
+.videoListItem {
+    height: 94px;
+    width: 9.882vw;
+}
+
+@media screen and (max-width:1273px) {
+    .videoPage {
+        display: flex;
+        margin-top: 30px;
+        gap: 20px;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .videoListInPage {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
 }

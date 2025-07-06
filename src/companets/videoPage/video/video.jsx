@@ -4,11 +4,14 @@ import './video.css'
 const Video = ({ clickedItem }) => {
     return (
         <div className='videoPlayer'>
-            <ReactPlayer
-                url={clickedItem.video}
-                width="100%"
-                height="100%"
-            />
+            <div className="videoPlayerItem">
+                <ReactPlayer
+                    className="videoPlayerItemV"
+                    url={clickedItem.video}
+                    width="100%"
+                    height="100%"
+                />
+            </div>
             <p>{clickedItem.name}</p>
         </div>
     )
