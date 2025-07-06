@@ -4,20 +4,22 @@ import HomePage from '../homePage/homePage';
 import VideoPage from '../videoPage/videoPage';
 import { Routes, Route } from "react-router-dom";
 import Login from '../loginPage/login';
+import ScrollToTop from './scrollToTop';
 import './App.css'
 
 function App() {
   const [item, setVideos] = useState([]);
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}json/video.json`)
-    .then(response => response.json())
-    .then(data => setVideos(data));
+      .then(response => response.json())
+      .then(data => setVideos(data));
   }, []);
 
   return (
 
     <>
       <div className="content">
+        <ScrollToTop/>
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage item={item} />} />

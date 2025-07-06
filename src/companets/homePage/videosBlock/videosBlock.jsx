@@ -9,7 +9,6 @@ const VideosBlock = ({ item }) => {
 
     const handleClick = (clickedItem) => {
         navigate('/courses', { state: { clickedItem: clickedItem, all: item } });
-        console.log(clickedItem)
     };
     return (
         <div className='videoBlock'>

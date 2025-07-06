@@ -1,31 +1,78 @@
-import React from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link } from "react-router-dom";
-
 import './navbar.css'
+
 const Navbar = () => {
+    const [menu, setMenu] = useState(false)
+    const toggleMenu = () => setMenu(!menu);
+
+    const menuRef = useRef(null); // Ссылка на меню
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
+                setMenu(false); // Закрыть меню при клике вне него
+            }
+        };
+
+        if (menu) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [menu]);
+
     return (
         <div>
             <nav className="navbar">
                 <div className="navigation">
-                    {/* <img src="" alt="" className="logo" /> */}
+                    <img
+                        className={`burger ${menu ? 'open' : ''}`}
+                        onClick={toggleMenu}
+                        src={`${import.meta.env.BASE_URL}image/hamburgermenu.svg`}
+                        alt="menu"
+                    />
+
+                    <div className='bgForBody'>
+                        <ol
+                            ref={menuRef}
+                            className={`burger ${menu ? 'show' : ''}`}
+                        >
+                            <img
+                                src={`${import.meta.env.BASE_URL}image/close.svg`}
+                                alt="close"
+                                onClick={toggleMenu}
+                            />
+                            <div className="line"></div>
+
+                            <li><Link to="/" onClick={() => setMenu(false)}><div><img src={`${import.meta.env.BASE_URL}image/home.svg`} alt="home page" /><p>Home</p></div></Link></li>
+                            <li><Link to="/courses" onClick={() => setMenu(false)}><div><img src={`${import.meta.env.BASE_URL}image/youtube.svg`} alt="video page" /><p>Video</p></div></Link></li>
+                            {/* <li><Link to="/smt" onClick={() => setMenu(false)}><img src="" alt="" /></Link></li> */}
+                            {/* <li><Link to="/smt" onClick={() => setMenu(false)}><img src="" alt="" /></Link></li> */}
+                        </ol>
+                    </div>
+
                     <h2>EdUmeed</h2>
                     <ul>
-
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/courses">Courses</Link></li>
                         <li><Link to="/smt">News</Link></li>
                         <li><Link to="/smt">Books</Link></li>
                     </ul>
                 </div>
+
                 <div className="infoZone">
                     <input className='inputSearch' type="text" placeholder='Search' />
-                    <img className='notifactionIcon' scr={`${import.meta.env.BASE_URL}image/notifaction.svg`} alt="notifaction" />
+                    <img className='notifactionIcon' src={`${import.meta.env.BASE_URL}image/notifaction.svg`} alt="notifaction" />
                     <img className='profileIcon' src={`${import.meta.env.BASE_URL}image/profileIcon.svg`} alt="profile" />
-
                 </div>
             </nav>
         </div>
     )
 }
 
-export default Navbar
+export default Navbar;

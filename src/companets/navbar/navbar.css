@@ -11,6 +11,44 @@
     gap: 32px;
 }
 
+.navigation>img {
+    width: 45px;
+    display: none;
+}
+
+ol {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+    left: -180px;
+    height: 100vh;
+    padding-top: 10px;
+    z-index: 3;
+    background: var(--dark-blue);
+    transition: 0.3s;
+    border: 1px solid var(--light-blue);
+    width: 180px;
+}
+
+
+
+ol div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+ol.show {
+    left: -5px;
+}
+
+ol img {
+    width: 45px;
+}
+
 ul {
     display: flex;
     gap: 36px;
@@ -81,5 +119,11 @@ nav ul li a:hover {
     .notifactionIcon {
         display: none;
     }
+
+    .navigation>img {
+        display: block;
+    }
+
+
 
 }

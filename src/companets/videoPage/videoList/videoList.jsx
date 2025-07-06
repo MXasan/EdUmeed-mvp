@@ -6,6 +6,10 @@ const VideoList = ({ list, all }) => {
     const navigate = useNavigate();
     const handleClick = () => {
         navigate('/courses', { state: { clickedItem: list, all } });
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // ← вот это отвечает за плавность
+        });
     };
     return (
         <div className='videoListParent' onClick={handleClick}>

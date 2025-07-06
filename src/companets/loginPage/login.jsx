@@ -31,7 +31,6 @@ function Login() {
         try {
             const result = await signInWithPopup(auth, provider);
             const user = result.user;
-            console.log("Google вход успешен:", user);
             alert("Вы вошли через Google: " + user.email);
             // тут можно также сохранить в Firestore, если хочешь
         } catch (error) {
