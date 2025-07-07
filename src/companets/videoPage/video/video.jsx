@@ -13,6 +13,7 @@ const Video = ({ clickedItem }) => {
                 />
             </div>
             <p>{clickedItem.name}</p>
+            <div className="line"></div>
         </div>
     )
 }

@@ -46,9 +46,10 @@
     }
 
     .videoListParent {
-        width: 43.5vw; 
+        width: 43.5vw;
     }
 }
+
 @media screen and (max-width:779px) {
     .videoListParent>img {
         width: 89vw;
@@ -59,11 +60,14 @@
         width: 89vw;
     }
 }
+
 @media screen and (max-width:600px) {
     .videoListParent>img {
+        width: 97vw;
         height: 270px;
     }
 }
+
 @media screen and (max-width:400px) {
     .videoListParent>img {
         height: 230px;

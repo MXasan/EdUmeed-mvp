@@ -17,6 +17,7 @@
   --dark-blue: #0F1A24;
   --medium-blue: #21364A;
   --light-blue: #8FADCC;
+ 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -33,9 +34,13 @@ body {
 
 
 @media (prefers-color-scheme: light) {
+  
   :root {
     color: #0F1A24;
     background-color: #ffffff;
+    --dark-blue: #ffffff;
+    --medium-blue: #2d99ff;
+    --light-blue: #66b5ff;
   }
 
   a:hover {

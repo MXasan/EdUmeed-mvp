@@ -19,7 +19,7 @@ function App() {
 
     <>
       <div className="content">
-        <ScrollToTop/>
+        <ScrollToTop />
         <Navbar />
         <div className="line"></div>
         <Routes>
