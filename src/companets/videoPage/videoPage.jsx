@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Video from './video/video'
 import VideoList from './videoList/videoList';
-import './VideoPage.css'
+import './videoPage.css'
 
 const VideoPage = () => {
     const location = useLocation();
