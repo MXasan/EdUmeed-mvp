@@ -5,6 +5,8 @@ import VideoPage from '../videoPage/videoPage';
 import { Routes, Route } from "react-router-dom";
 import Login from '../loginPage/login';
 import ScrollToTop from './scrollToTop';
+import Profile from '../profilePage/Profile';
+import FeedbackForm from '../FeedbackForm/FeedbackForm';
 import './App.css'
 
 function App() {
@@ -25,8 +27,11 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage item={item} />} />
           <Route path="/courses" element={<VideoPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<Profile />} />
+
         </Routes>
-        <Login />
+        <FeedbackForm />
       </div>
     </>
   )
