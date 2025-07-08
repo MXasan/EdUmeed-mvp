@@ -49,8 +49,8 @@ function Login() {
         <div className="login-container">
             <div className="login-box">
                 <img src={`${import.meta.env.BASE_URL}image/cardS3.jpg`} alt="" />
-                <h2>Welcome back</h2>
-                <p>Please enter your details to sign in </p>
+                {isLogin ? <h2>Welcome back</h2> : <h2>Welcome</h2>}
+                <p>Please enter your details to sign in</p>
                 <button className="google-btn" onClick={handleGoogleLogin}>
                     <img src={`${import.meta.env.BASE_URL}image/google.svg`} alt="" /> Sign in with Google
                 </button>
@@ -78,9 +78,9 @@ function Login() {
                         autoComplete="current-password"
                         required
                     />
-                    {error && <p className="error-message">{error}</p>}
+                    {error && <p className="error-message">email or password incorect</p>}
                     <button type="submit" className="submit">
-                        {isLogin ? "Войти" : "Зарегистрироваться"}
+                        {isLogin ? "Sign in" : "Sign up"}
                     </button>
                 </form>
                 <a
@@ -92,11 +92,11 @@ function Login() {
                 >
                     {isLogin ? (
                         <>
-                            Don't have accaunt yet ?  <span>Sign up</span>
+                            Don't have accaunt yet? <span>Sign up</span>
                         </>
                     ) : (
                         <>
-                            Alredy had accaunt  <span>Sign in</span>
+                            Alredy had accaunt <span>Sign in</span>
                         </>
                     )}
                 </a>

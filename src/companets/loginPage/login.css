@@ -44,6 +44,7 @@
     background-color: #fff;
     border-radius: 8px;
     font-size: 16px;
+    color: #333;
 }
 
 .login-box button {
@@ -120,5 +121,18 @@ a>span {
 @media screen and (max-width: 600px) {
     .login-container {
         height: 85vh;
+    }
+
+    .login-box {
+        width: 90vw;
+        height: 70vh;
+    }
+
+    .login-box h2 {
+        margin-top: 10px;
+    }
+
+    a {
+        padding: 0;
     }
 }

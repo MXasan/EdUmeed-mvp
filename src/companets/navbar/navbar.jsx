@@ -1,10 +1,16 @@
+import React, { useContext } from 'react';
 import { useState, useEffect, useRef } from 'react'
-import { Link } from "react-router-dom";
+import { useNavigate , Link } from 'react-router-dom'
+import { AuthContext } from '../../context/AuthContext'
+
 import './navbar.css'
 
 const Navbar = () => {
     const [menu, setMenu] = useState(false)
     const toggleMenu = () => setMenu(!menu);
+    const { currentUser } = useContext(AuthContext);
+    const navigate = useNavigate();
+
 
     const menuRef = useRef(null); // Ссылка на меню
 
@@ -26,6 +32,15 @@ const Navbar = () => {
         };
     }, [menu]);
 
+    const handleClick = () => {
+        if (!currentUser) {
+            // пользователь не авторизован → отправляем на login и запоминаем, откуда пришёл
+            navigate("/login", { state: { from: "/" } });
+        } else {
+            // пользователь авторизован → показываем курс
+            navigate("/profile");
+        }
+    };
     return (
         <div>
             <nav className="navbar">
@@ -68,7 +83,7 @@ const Navbar = () => {
                 <div className="infoZone">
                     <input className='inputSearch' type="text" placeholder='Search' />
                     <img className='notifactionIcon' src={`${import.meta.env.BASE_URL}image/notifaction.svg`} alt="notifaction" />
-                    <Link to='/profile'> <img className='profileIcon' src={`${import.meta.env.BASE_URL}image/profileIcon.svg`} alt="profile" /></Link>
+                    <img className='profileIcon' src={`${import.meta.env.BASE_URL}image/profileIcon.svg`} alt="profile" onClick={handleClick}/>
                 </div>
             </nav>
         </div>

@@ -32,7 +32,9 @@ ol {
     width: 180px;
 }
 
-
+ol li {
+    margin-bottom: 30px;
+}
 
 ol div {
     display: flex;
