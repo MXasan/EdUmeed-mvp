@@ -1,0 +1,124 @@
+/* login.css */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.login-box {
+    background: white;
+    color: #333;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login-box h2 {
+    margin-bottom: 5px;
+    text-align: center;
+    color: #000;
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+.login-box>p {
+    margin-bottom: 20px;
+    text-align: center;
+    color: rgb(82, 82, 82);
+}
+
+.login-box form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+.submit {
+    background: rgb(33, 33, 33);
+}
+
+
+.toggle-btn {
+    color: rgb(106, 106, 106);
+}
+
+.google-btn {
+    background-color: #fcfcfc;
+    color: #333;
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.login-box>img {
+    width: 100px;
+}
+
+.linePart {
+    border: 1px solid rgb(142, 142, 142);
+    height: 1px;
+    width: 100% !important;
+}
+
+.lineP {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.lineP>p {
+    font-size: 12px;
+    font-weight: 700;
+    color: rgb(142, 142, 142);
+
+}
+
+a>span {
+    color: black;
+    font-weight: 700;
+}
+
+.google-btn>img {
+    width: 30px;
+}
+
+@media screen and (max-width: 600px) {
+    .login-container {
+        height: 85vh;
+    }
+}

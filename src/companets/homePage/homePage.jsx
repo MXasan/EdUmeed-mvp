@@ -2,7 +2,7 @@ import React from 'react'
 // import Header from './header/header'
 import VideosBlock from './videosBlock/videosBlock'
 import CardSwap, { Card } from './CardSwap/CardSwap'
-
+import FeedbackForm from './feedbackForm/FeedbackForm'
 const HomePage = ({ item }) => {
     return (
         <div className='HomePage'>
@@ -12,7 +12,7 @@ const HomePage = ({ item }) => {
                     <h1>EdUmeed - Education <br /> is hope</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br />
                         Consequatur dolorem fuga repudiandae. Distinctio recusandae
-                        </p>
+                    </p>
                 </div>
 
 
@@ -50,6 +50,8 @@ const HomePage = ({ item }) => {
             </div>
 
             <VideosBlock item={item} />
+            <FeedbackForm />
+
         </div>
     )
 }

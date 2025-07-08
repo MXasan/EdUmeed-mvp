@@ -50,7 +50,7 @@ const Navbar = () => {
                             <div className="line"></div>
 
                             <li><Link to="/" onClick={() => setMenu(false)}><div><img src={`${import.meta.env.BASE_URL}image/home.svg`} alt="home page" /><p>Home</p></div></Link></li>
-                            <li><Link to="/courses" onClick={() => setMenu(false)}><div><img src={`${import.meta.env.BASE_URL}image/notes.svg`} alt="notes page" /><p>Video</p></div></Link></li>
+                            <li><Link to="/courses" onClick={() => setMenu(false)}><div><img src={`${import.meta.env.BASE_URL}image/notes.svg`} alt="notes page" /><p>Notes</p></div></Link></li>
                             <li><Link to="/smt" onClick={() => setMenu(false)}><div><img src={`${import.meta.env.BASE_URL}image/news.svg`} alt="" /><p>News</p></div></Link></li>
                             <li><Link to="/smt" onClick={() => setMenu(false)}><div><img src={`${import.meta.env.BASE_URL}image/book.svg`} alt="" /><p>Books</p></div></Link></li>
                         </ol>

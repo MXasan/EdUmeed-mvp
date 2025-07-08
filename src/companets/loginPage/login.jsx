@@ -7,11 +7,13 @@ import {
     signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../../firebase/firebaseConfig";
+import "./login.css"; // Подключаем стили
 
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isLogin, setIsLogin] = useState(true);
+    const [error, setError] = useState("");
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -19,90 +21,89 @@ function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setError("");
         try {
             if (isLogin) {
                 await signInWithEmailAndPassword(auth, email, password);
             } else {
                 await createUserWithEmailAndPassword(auth, email, password);
             }
-            navigate(from, { replace: true }); // возвращаем пользователя обратно
-        } catch (error) {
-            alert("Ошибка: " + error.message);
+            navigate(from, { replace: true });
+        } catch (err) {
+            setError(err.message); // Показываем ошибку
         }
     };
 
     const handleGoogleLogin = async () => {
         const provider = new GoogleAuthProvider();
+        setError("");
         try {
             const result = await signInWithPopup(auth, provider);
-            const user = result.user;
-            console.log("Google вход успешен:", user);
-            navigate(from, { replace: true }); // возвращаем пользователя обратно
-        } catch (error) {
-            console.error("Ошибка входа через Google:", error);
-            alert("Ошибка Google-входа: " + error.message);
+            navigate(from, { replace: true });
+        } catch (err) {
+            setError(err.message);
         }
     };
+
     return (
-        <div style={{ padding: "40px", maxWidth: "400px", margin: "auto" }}>
-            <h2>{isLogin ? "Вход" : "Регистрация"}</h2>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    autoComplete="email"
-                    required
-                    style={{ width: "100%", padding: "10px", marginBottom: "10px" }}
-                />
-                <input
-                    type="password"
-                    placeholder="Пароль"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    autoComplete="current-password"
-                    required
-                    style={{ width: "100%", padding: "10px", marginBottom: "10px" }}
-                />
-                <button
-                    type="submit"
-                    style={{
-                        width: "100%",
-                        padding: "10px",
-                        marginBottom: "10px",
-                        backgroundColor: "#4CAF50",
-                        color: "white",
-                        border: "none",
+        <div className="login-container">
+            <div className="login-box">
+                <img src={`${import.meta.env.BASE_URL}image/cardS3.jpg`} alt="" />
+                <h2>Welcome back</h2>
+                <p>Please enter your details to sign in </p>
+                <button className="google-btn" onClick={handleGoogleLogin}>
+                    <img src={`${import.meta.env.BASE_URL}image/google.svg`} alt="" /> Sign in with Google
+                </button>
+                <div className="lineP">
+                    <div className="linePart"></div>
+                    <p>OR</p>
+                    <div className="linePart"></div>
+
+                </div>
+                {/* <h2>{isLogin ? "Вход" : "Регистрация"}</h2> */}
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        autoComplete="email"
+                        required
+                    />
+                    <input
+                        type="password"
+                        placeholder="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        autoComplete="current-password"
+                        required
+                    />
+                    {error && <p className="error-message">{error}</p>}
+                    <button type="submit" className="submit">
+                        {isLogin ? "Войти" : "Зарегистрироваться"}
+                    </button>
+                </form>
+                <a
+                    className="toggle-btn"
+                    onClick={() => {
+                        setIsLogin(!isLogin);
+                        setError("");
                     }}
                 >
-                    {isLogin ? "Войти" : "Зарегистрироваться"}
-                </button>
-            </form>
-            <button
-                onClick={() => setIsLogin(!isLogin)}
-                style={{
-                    width: "100%",
-                    padding: "10px",
-                    backgroundColor: "#eee",
-                    marginBottom: "10px",
-                }}
-            >
-                {isLogin ? "Нет аккаунта? Зарегистрироваться" : "Уже есть аккаунт? Войти"}
-            </button>
-            <hr style={{ margin: "20px 0" }} />
-            <button
-                onClick={handleGoogleLogin}
-                style={{
-                    width: "100%",
-                    padding: "10px",
-                    backgroundColor: "#4285F4",
-                    color: "white",
-                    border: "none",
-                }}
-            >
-                Войти через Google
-            </button>
+                    {isLogin ? (
+                        <>
+                            Don't have accaunt yet ?  <span>Sign up</span>
+                        </>
+                    ) : (
+                        <>
+                            Alredy had accaunt  <span>Sign in</span>
+                        </>
+                    )}
+                </a>
+
+                <hr />
+
+            </div>
         </div>
     );
 }

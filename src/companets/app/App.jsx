@@ -6,7 +6,6 @@ import { Routes, Route } from "react-router-dom";
 import Login from '../loginPage/login';
 import ScrollToTop from './scrollToTop';
 import Profile from '../profilePage/Profile';
-import FeedbackForm from '../FeedbackForm/FeedbackForm';
 import './App.css'
 
 function App() {
@@ -31,7 +30,6 @@ function App() {
           <Route path="/profile" element={<Profile />} />
 
         </Routes>
-        <FeedbackForm />
       </div>
     </>
   )
