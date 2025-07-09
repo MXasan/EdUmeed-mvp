@@ -1,0 +1,116 @@
+.profile-container {
+    padding: 0px 10px 0px 10px;
+    max-width: 500px;
+    margin: auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.profileIconInProfilePage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.gmail {
+    color: var(--light-blue);
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    background: var(--medium-blue);
+    border: none;
+}
+
+.edit-btn,
+.save-btn,
+.logout-btn,
+.cancel-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.edit-btn {
+    background-color: var(--medium-blue);
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #2980b9;
+}
+
+.save-btn {
+    background-color: #27ae60;
+    color: white;
+}
+
+.save-btn:hover {
+    background-color: #219150;
+}
+
+.logout-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+}
+
+.aboutMe {
+    background-color: var(--medium-blue);
+    color: white;
+    height: 200px;
+    text-align: start;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.feeling {
+    margin: 10px;
+}
+
+/* .lineProfile {
+    height: 1px;
+    width: 100%;
+    border: 1px solid  var(--dark-blue);
+} */
+
+.aboutMe {
+    border: 1px solid var(--medium-blue);
+}
+
+.cancel-btn {
+    background: #6B6B6B;
+}

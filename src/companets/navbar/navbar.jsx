@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
 import { useState, useEffect, useRef } from 'react'
-import { useNavigate , Link } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
+import { useUserProfile } from "../../hooks/useUserProfile";
+
 
 import './navbar.css'
 
@@ -10,6 +12,9 @@ const Navbar = () => {
     const toggleMenu = () => setMenu(!menu);
     const { currentUser } = useContext(AuthContext);
     const navigate = useNavigate();
+
+
+    const { photo, photoPreview, loading } = useUserProfile(currentUser);
 
 
     const menuRef = useRef(null); // Ссылка на меню
@@ -83,7 +88,14 @@ const Navbar = () => {
                 <div className="infoZone">
                     <input className='inputSearch' type="text" placeholder='Search' />
                     <img className='notifactionIcon' src={`${import.meta.env.BASE_URL}image/notifaction.svg`} alt="notifaction" />
-                    <img className='profileIcon' src={`${import.meta.env.BASE_URL}image/profileIcon.svg`} alt="profile" onClick={handleClick}/>
+                    {!loading && (
+                        <img
+                            className="profileIcon"
+                            src={photoPreview || photo || `${import.meta.env.BASE_URL}image/profileIcon.svg`}
+                            alt="profile"
+                        />
+                    )}
+
                 </div>
             </nav>
         </div>
