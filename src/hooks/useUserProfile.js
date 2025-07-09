@@ -1,4 +1,3 @@
-// hooks/useUserProfile.js
 import { useState, useEffect } from "react";
 
 export const useUserProfile = (currentUser) => {
@@ -9,7 +8,7 @@ export const useUserProfile = (currentUser) => {
     const [photoPreview, setPhotoPreview] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
+    const loadProfileFromStorage = () => {
         const savedPhoto = localStorage.getItem("userPhoto");
         const savedName = localStorage.getItem("userName");
         const savedFeeling = localStorage.getItem("userFeeling");
@@ -21,6 +20,16 @@ export const useUserProfile = (currentUser) => {
         if (savedAbout) setAbout(savedAbout);
 
         setLoading(false);
+    };
+
+    useEffect(() => {
+        loadProfileFromStorage();
+
+        window.addEventListener("userProfileUpdated", loadProfileFromStorage);
+
+        return () => {
+            window.removeEventListener("userProfileUpdated", loadProfileFromStorage);
+        };
     }, []);
 
     const handlePhotoChange = (e) => {
@@ -41,12 +50,16 @@ export const useUserProfile = (currentUser) => {
         localStorage.setItem("userName", name);
         localStorage.setItem("userFeeling", feeling);
         localStorage.setItem("userAbout", about);
+
+        window.dispatchEvent(new Event("userProfileUpdated"));
     };
 
     const deletePhoto = () => {
         setPhoto(null);
         setPhotoPreview(null);
         localStorage.removeItem("userPhoto");
+
+        window.dispatchEvent(new Event("userProfileUpdated"));
     };
 
     return {
