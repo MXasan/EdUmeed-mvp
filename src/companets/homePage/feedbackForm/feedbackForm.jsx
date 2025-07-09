@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { db } from "../../../firebase/firebaseConfig";
 import { AuthContext } from "../../../context/AuthContext";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
+import "./FeedbackForm.css";
 
 function FeedbackForm() {
   const { currentUser } = useContext(AuthContext);
@@ -37,30 +38,21 @@ function FeedbackForm() {
   };
 
   return (
-    <div style={{ padding: "20px", maxWidth: "500px", margin: "auto" }}>
-      <h3>📝 Оставьте отзыв</h3>
+    <div className="feedback-container">
+      <h3 className="feedback-title">📝 Оставьте отзыв</h3>
       <form onSubmit={handleSubmit}>
         <textarea
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Напишите, что вы думаете..."
           rows={5}
-          style={{ width: "100%", padding: "10px", marginBottom: "10px" }}
+          className="feedback-textarea"
         />
-        <button
-          type="submit"
-          style={{
-            padding: "10px",
-            width: "100%",
-            backgroundColor: "#3498db",
-            color: "white",
-            border: "none",
-          }}
-        >
+        <button type="submit" className="feedback-button">
           Отправить
         </button>
       </form>
-      {status && <p style={{ marginTop: "10px" }}>{status}</p>}
+      {status && <p className="feedback-status">{status}</p>}
     </div>
   );
 }
