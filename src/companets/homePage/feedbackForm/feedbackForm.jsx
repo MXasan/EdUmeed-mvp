@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { db } from "../../../firebase/firebaseConfig";
 import { AuthContext } from "../../../context/AuthContext";
 import { collection, addDoc, Timestamp } from "firebase/firestore";

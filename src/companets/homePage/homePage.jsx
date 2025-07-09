@@ -1,6 +1,6 @@
 import React from 'react'
-// import Header from './header/header'
 import VideosBlock from './videosBlock/videosBlock'
+
 import CardSwap, { Card } from './CardSwap/CardSwap'
 import FeedbackForm from './feedbackForm/FeedbackForm'
 const HomePage = ({ item }) => {

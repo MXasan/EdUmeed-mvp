@@ -1,18 +1,22 @@
-import React, { useRef, useState } from 'react';
-import ReactPlayer from 'react-player';
+import { useRef, useState, Suspense, lazy } from 'react';
 import { FaPlay, FaPause } from 'react-icons/fa';
 import './video.css';
+
+const ReactPlayer = lazy(() => import('react-player'));
 
 const Video = ({ clickedItem }) => {
     const playerRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
 
     const handlePlayPause = () => {
+        const player = playerRef.current?.getInternalPlayer();
+        if (!player) return;
+
         if (isPlaying) {
-            playerRef.current?.getInternalPlayer()?.pauseVideo?.(); // для YouTube
+            player.pauseVideo?.(); // YouTube only
             setIsPlaying(false);
         } else {
-            playerRef.current?.getInternalPlayer()?.playVideo?.(); // для YouTube
+            player.playVideo?.();
             setIsPlaying(true);
         }
     };
@@ -20,14 +24,16 @@ const Video = ({ clickedItem }) => {
     return (
         <div className='videoPlayer'>
             <div className="videoPlayerItem">
-                <ReactPlayer
-                    ref={playerRef}
-                    url={clickedItem.video}
-                    width="100%"
-                    height="100%"
-                    playing={isPlaying}
-                    controls={false}
-                />
+                <Suspense fallback={<div className="loading">Загрузка видео...</div>}>
+                    <ReactPlayer
+                        ref={playerRef}
+                        url={clickedItem.video}
+                        width="100%"
+                        height="100%"
+                        playing={isPlaying}
+                        controls={false}
+                    />
+                </Suspense>
                 <button className="customPlayButton" onClick={handlePlayPause}>
                     {isPlaying ? <FaPause /> : <FaPlay />}
                 </button>

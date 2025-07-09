@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
@@ -93,6 +93,7 @@ const Navbar = () => {
                             className="profileIcon"
                             src={photoPreview || photo || `${import.meta.env.BASE_URL}image/profileIcon.svg`}
                             alt="profile"
+                            onClick={handleClick}
                         />
                     )}
 

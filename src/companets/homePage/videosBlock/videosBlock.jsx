@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import VideoItem from './videoItem/videoItem'
 import { useNavigate } from 'react-router-dom'
 import VideoPage from '../../videoPage/videoPage'
