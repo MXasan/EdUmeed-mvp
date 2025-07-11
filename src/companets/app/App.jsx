@@ -7,6 +7,7 @@ import Login from '../loginPage/login';
 import ScrollToTop from './scrollToTop';
 import Profile from '../profilePage/Profile';
 import './App.css'
+import Notes from '../notePage/notes';
 
 function App() {
   const [item, setVideos] = useState([]);
@@ -28,7 +29,7 @@ function App() {
           <Route path="/courses" element={<VideoPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
-
+          <Route path='/notes' element={<Notes />} />
         </Routes>
       </div>
     </>

@@ -1,0 +1,83 @@
+[
+    {
+      "id": 1,
+      "title": "Self-Help",
+      "author": "Samuel Smiles",
+      "description": "A classic on self-reliance, perseverance, and character development.",
+      "cover": "https://covers.openlibrary.org/b/isbn/9780140434387-M.jpg",
+      "link": "https://www.gutenberg.org/ebooks/935.html.images"
+    },
+    {
+      "id": 2,
+      "title": "Self-Development and the Way to Power",
+      "author": "L. W. Rogers",
+      "description": "Guide to mastering life through spiritual and personal development.",
+      "cover": "https://covers.openlibrary.org/b/isbn/9781230456591-M.jpg",
+      "link": "https://www.gutenberg.org/ebooks/13142.html.images"
+    },
+    {
+      "id": 3,
+      "title": "How to Succeed",
+      "author": "Rosetta Dunigan",
+      "description": "Encouragement and insights on character, perseverance, and the role of failure.",
+      "cover": "https://covers.openlibrary.org/b/isbn/9781230456607-M.jpg",
+      "link": "https://www.gutenberg.org/ebooks/60200.html.images"
+    },
+    {
+      "id": 4,
+      "title": "Character Building",
+      "author": "Booker T. Washington",
+      "description": "Practical advice and moral lessons to inspire self-improvement.",
+      "cover": "https://covers.openlibrary.org/b/isbn/9781230456614-M.jpg",
+      "link": "https://www.gutenberg.org/ebooks/60484.html.images"
+    },
+    {
+      "id": 5,
+      "title": "The Key to Success",
+      "author": "Russell H. Conwell",
+      "description": "Stories and principles on unlocking your potential.",
+      "cover": "https://covers.openlibrary.org/b/isbn/9781230456621-M.jpg",
+      "link": "https://www.gutenberg.org/ebooks/37036.html.images"
+    },
+    {
+      "id": 6,
+      "title": "Making Life Worth While",
+      "author": "Douglas Fairbanks",
+      "description": "Inspirational thoughts on living a fulfilling and proactive life.",
+      "cover": "https://covers.openlibrary.org/b/isbn/9781230456638-M.jpg",
+      "link": "https://www.gutenberg.org/ebooks/48565.html.images"
+    },
+    {
+      "id": 7,
+      "title": "The Art of Money Getting",
+      "author": "P. T. Barnum",
+      "description": "Golden rules for attracting wealth and managing it wisely.",
+      "cover": "https://covers.openlibrary.org/b/isbn/9781230456645-M.jpg",
+      "link": "https://www.gutenberg.org/ebooks/28717.html.images"
+    },
+    {
+      "id": 8,
+      "title": "Pushing to the Front",
+      "author": "Orison Swett Marden",
+      "description": "Lessons on determination, ambition, and overcoming adversity.",
+      "cover": "https://covers.openlibrary.org/b/isbn/9781230456652-M.jpg",
+      "link": "https://www.gutenberg.org/ebooks/19704.html.images"
+    },
+    {
+      "id": 9,
+      "title": "Acres of Diamonds",
+      "author": "Russell H. Conwell",
+      "description": "Inspiration to seek opportunity in everyday life.",
+      "cover": "https://covers.openlibrary.org/b/isbn/9781230456669-M.jpg",
+      "link": "https://www.gutenberg.org/ebooks/34318.html.images"
+    },
+    {
+      "id": 10,
+      "title": "The Science of Getting Rich",
+      "author": "Wallace D. Wattles",
+      "description": "Mental techniques and actions to attract wealth and abundance.",
+      "cover": "https://covers.openlibrary.org/b/isbn/9781230456676-M.jpg",
+      "link": "https://www.gutenberg.org/ebooks/28996.html.images"
+    }
+  ]
+  
