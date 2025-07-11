@@ -1,0 +1,68 @@
+.all-feedbacks {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.all-feedbacks h2 {
+    margin-bottom: 20px;
+}
+
+.feedback-card {
+    background: var(--medium-blue);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 260px;
+}
+
+.feedback-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.feedback-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.feedback-placeholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+}
+
+.feedback-name a {
+    color: #2d99ff;
+    text-decoration: none;
+}
+
+.feedback-message {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.feedback-time {
+    color: #777;
+    font-size: 12px;
+}
+
+.cardsFeedbackParent {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px
+    ;
+}

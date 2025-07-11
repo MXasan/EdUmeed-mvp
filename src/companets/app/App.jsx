@@ -8,6 +8,7 @@ import ScrollToTop from './scrollToTop';
 import Profile from '../profilePage/Profile';
 import './App.css'
 import Notes from '../notePage/notes';
+import UserProfile from '../UserProfile/userProfile';
 
 function App() {
   const [item, setVideos] = useState([]);
@@ -30,6 +31,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
           <Route path='/notes' element={<Notes />} />
+          <Route path="/user/:uid" element={<UserProfile />} />
+
         </Routes>
       </div>
     </>

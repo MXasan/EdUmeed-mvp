@@ -15,7 +15,7 @@ const firebaseConfig = {
     apiKey: "AIzaSyB3kNew3K9iCh0Z-NZ5W-5i6H-3Qcbj7YI",
     authDomain: "edumeedapp.firebaseapp.com",
     projectId: "edumeedapp",
-    storageBucket: "edumeedapp.firebasestorage.app",
+    storageBucket: "edumeedapp.appspot.com",
     messagingSenderId: "715351646933",
     appId: "1:715351646933:web:1de20df0a0f31641bd385c",
     measurementId: "G-L8JQ615VPL"

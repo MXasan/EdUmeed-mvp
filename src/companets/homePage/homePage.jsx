@@ -3,6 +3,7 @@ import VideosBlock from './videosBlock/videosBlock'
 
 import CardSwap, { Card } from './CardSwap/CardSwap'
 import FeedbackForm from './feedbackForm/FeedbackForm'
+import AllFeedbacks from './allFeedbacks/allFeedBacks'
 const HomePage = ({ item }) => {
     return (
         <div className='HomePage'>
@@ -51,7 +52,7 @@ const HomePage = ({ item }) => {
 
             <VideosBlock item={item} />
             <FeedbackForm />
-
+            <AllFeedbacks />
         </div>
     )
 }

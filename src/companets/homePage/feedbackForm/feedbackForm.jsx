@@ -1,34 +1,38 @@
 import { useState, useContext } from "react";
 import { db } from "../../../firebase/firebaseConfig";
 import { AuthContext } from "../../../context/AuthContext";
-import { collection, addDoc, Timestamp } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  Timestamp,
+  doc,
+  getDoc,
+} from "firebase/firestore";
 import "./FeedbackForm.css";
 
 function FeedbackForm() {
   const { currentUser } = useContext(AuthContext);
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState("");
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!currentUser) {
-      setStatus("Вы должны войти в аккаунт, чтобы отправить отзыв.");
-      return;
-    }
-
-    if (!message.trim()) {
-      setStatus("Пожалуйста, напишите что-нибудь :)");
-      return;
-    }
+    if (!currentUser || !message.trim()) return;
 
     try {
+      const userRef = doc(db, "users", currentUser.uid);
+      const userSnap = await getDoc(userRef);
+      const userData = userSnap.exists() ? userSnap.data() : {};
+
       await addDoc(collection(db, "feedbacks"), {
         uid: currentUser.uid,
         email: currentUser.email,
+        displayName: userData.name || currentUser.displayName || currentUser.email,
+        photoURL: userData.photo || currentUser.photoURL || null,
         message: message.trim(),
         createdAt: Timestamp.now(),
       });
+
       setMessage("");
       setStatus("Спасибо за отзыв!");
     } catch (error) {
@@ -36,7 +40,6 @@ function FeedbackForm() {
       setStatus("Ошибка при отправке. Попробуйте позже.");
     }
   };
-
   return (
     <div className="feedback-container">
       <h3 className="feedback-title">📝 Оставьте отзыв</h3>

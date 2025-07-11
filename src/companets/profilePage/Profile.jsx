@@ -39,7 +39,7 @@ function Profile() {
         <div className="profile-container">
             <img
                 className="profileIconInProfilePage"
-                src={photoPreview || photo || `${import.meta.env.BASE_URL}image/profileIcon.svg`}
+                src={photoPreview || photo || `${import.meta.env.BASE_URL} image /profileIcon.svg`}
                 alt="profile"
             />
 

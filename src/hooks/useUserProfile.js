@@ -1,75 +1,90 @@
 import { useState, useEffect } from "react";
+import { doc, setDoc, getDoc } from "firebase/firestore";
+import { db } from "../firebase/firebaseConfig";
 
 export const useUserProfile = (currentUser) => {
-    const [name, setName] = useState(currentUser?.displayName || "");
-    const [feeling, setFeeling] = useState("");
-    const [about, setAbout] = useState("");
-    const [photo, setPhoto] = useState(null);
-    const [photoPreview, setPhotoPreview] = useState(null);
-    const [loading, setLoading] = useState(true);
+  const [name, setName] = useState(currentUser?.displayName || "");
+  const [feeling, setFeeling] = useState("");
+  const [about, setAbout] = useState("");
+  const [photo, setPhoto] = useState(null);
+  const [photoPreview, setPhotoPreview] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-    const loadProfileFromStorage = () => {
-        const savedPhoto = localStorage.getItem("userPhoto");
-        const savedName = localStorage.getItem("userName");
-        const savedFeeling = localStorage.getItem("userFeeling");
-        const savedAbout = localStorage.getItem("userAbout");
+  const loadProfile = async () => {
+    if (!currentUser) return;
 
-        if (savedPhoto) setPhoto(savedPhoto);
-        if (savedName) setName(savedName);
-        if (savedFeeling) setFeeling(savedFeeling);
-        if (savedAbout) setAbout(savedAbout);
+    // Загружаем из Firestore
+    const docRef = doc(db, "users", currentUser.uid);
+    const docSnap = await getDoc(docRef);
 
-        setLoading(false);
-    };
+    if (docSnap.exists()) {
+      const data = docSnap.data();
+      if (data.name) setName(data.name);
+      if (data.feeling) setFeeling(data.feeling);
+      if (data.about) setAbout(data.about);
+      if (data.photo) {
+        setPhoto(data.photo);
+        setPhotoPreview(data.photo);
+      }
+    }
 
-    useEffect(() => {
-        loadProfileFromStorage();
+    setLoading(false);
+  };
 
-        window.addEventListener("userProfileUpdated", loadProfileFromStorage);
+  useEffect(() => {
+    loadProfile();
+    window.addEventListener("userProfileUpdated", loadProfile);
+    return () => window.removeEventListener("userProfileUpdated", loadProfile);
+  }, [currentUser]);
 
-        return () => {
-            window.removeEventListener("userProfileUpdated", loadProfileFromStorage);
-        };
-    }, []);
+  const handlePhotoChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const base64 = reader.result;
+        setPhoto(base64);
+        setPhotoPreview(base64);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
-    const handlePhotoChange = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                const base64 = reader.result;
-                setPhoto(base64);
-                setPhotoPreview(base64);
-            };
-            reader.readAsDataURL(file);
-        }
-    };
+  const saveProfile = async () => {
+    if (!currentUser) return;
 
-    const saveProfile = () => {
-        localStorage.setItem("userPhoto", photo);
-        localStorage.setItem("userName", name);
-        localStorage.setItem("userFeeling", feeling);
-        localStorage.setItem("userAbout", about);
+    // Сохраняем в Firestore
+    await setDoc(doc(db, "users", currentUser.uid), {
+      name,
+      photo,
+      feeling,
+      about,
+    }, { merge: true });
 
-        window.dispatchEvent(new Event("userProfileUpdated"));
-    };
+    // Обновляем localStorage
+    localStorage.setItem("userPhoto", photo);
+    localStorage.setItem("userName", name);
+    localStorage.setItem("userFeeling", feeling);
+    localStorage.setItem("userAbout", about);
 
-    const deletePhoto = () => {
-        setPhoto(null);
-        setPhotoPreview(null);
-        localStorage.removeItem("userPhoto");
+    window.dispatchEvent(new Event("userProfileUpdated"));
+  };
 
-        window.dispatchEvent(new Event("userProfileUpdated"));
-    };
+  const deletePhoto = () => {
+    setPhoto(null);
+    setPhotoPreview(null);
+    localStorage.removeItem("userPhoto");
+    window.dispatchEvent(new Event("userProfileUpdated"));
+  };
 
-    return {
-        name, setName,
-        feeling, setFeeling,
-        about, setAbout,
-        photo, photoPreview,
-        handlePhotoChange,
-        deletePhoto,
-        saveProfile,
-        loading
-    };
+  return {
+    name, setName,
+    feeling, setFeeling,
+    about, setAbout,
+    photo, photoPreview,
+    handlePhotoChange,
+    deletePhoto,
+    saveProfile,
+    loading
+  };
 };
